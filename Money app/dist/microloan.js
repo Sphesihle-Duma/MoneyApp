@@ -2,7 +2,7 @@
 $(document).ready(function () {
 $('#microloans-action').click(function () {
   const formHtml = `
-    <h3>Apply for a Microloan</h3>
+    <h3 id="apply-heading">Apply for a Microloan</h3>
     <div id="loan-report" style="margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 8px; background-color:  #02130b; display: none; color: white"></div>
     <form id="microloan-form">
       <div class="form-field">
@@ -60,7 +60,7 @@ $('#microloans-action').click(function () {
     const totalInterest = totalRepayment - loanAmount;
 
     const reportHtml = `
-      <h3>Loan Repayment Details</h3>
+      <h3 id="loan-repayment">Loan Repayment Details</h3>
       <p><strong>Name:</strong> ${$('#name').val()}</p>
       <p><strong>Surname:</strong> ${$('#surname').val()}</p>
       <p><strong>ID:</strong> ${$('#id').val()}</p>

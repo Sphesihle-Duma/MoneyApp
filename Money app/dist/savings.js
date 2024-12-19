@@ -6,7 +6,7 @@ $(document).ready(function () {
   
     function getSavingsHtml() {
       return `
-        <h1>Set Your Savings Goal</h1>
+        <h3>Set Your Savings Goal</h3>
         <form id="savings-form">
           <label for="goal-name">Goal Name:</label>
           <input type="text" id="goal-name" placeholder="e.g., Vacation">
@@ -21,20 +21,21 @@ $(document).ready(function () {
         </form>
   
         <div id="progress-section" style="display: none; margin-top: 20px;">
-          <h2>Your Progress</h2>
+          <h3>Your Progress</h3>
           <div id="progress-bar-container">
             <div id="progress-bar"></div>
           </div>
           <p id="progress-text"></p>
           <button type="button" id="add-monthly-saving">Add This Month's Saving</button>
   
-          <h3>Monthly Breakdown</h3>
+          <h3 id="monthly-breakdown">Monthly Breakdown</h3>
           <table id="breakdown-table" border="1">
             <thead>
               <tr>
                 <th>Month</th>
                 <th>Saved Amount</th>
                 <th>Total Savings</th>
+                
               </tr>
             </thead>
             <tbody></tbody>
