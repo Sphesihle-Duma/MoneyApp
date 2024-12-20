@@ -19,15 +19,15 @@ $('#microloans-action').click(function () {
       </div>
       <div class="form-field">
         <label for="loan-amount">Loan Amount</label>
-        <input type="number" id="loan-amount" name="loan_amount" required>
+        <input type="number" id="loan-amount" name="loan_amount" min="1000" max="20 000"  required>
       </div>
       <div class="form-field">
         <label for="interest-rate">Interest Rate (%)</label>
-        <input type="number" id="interest-rate" name="interest_rate" step="0.01" required>
+        <input type="number" id="interest-rate" name="interest_rate" step="0.01" value="8" readonly>
       </div>
       <div class="form-field">
         <label for="payment-period">Payment Period (Months)</label>
-        <input type="number" id="payment-period" name="payment_period" required>
+        <input type="number" id="payment-period" name="payment_period" min="1" max="36" required>
       </div>
       <div class="responses">
          <div class="form-actions">
@@ -72,6 +72,24 @@ $('#microloans-action').click(function () {
       <p><strong>Total Interest Paid:</strong> R${totalInterest.toFixed(2)}</p>
     `;
     $('#loan-report').html(reportHtml).show();
+  });
+
+  $('#submit-loan').click(function () {
+    const name = $('#name').val();
+    const surname = $('#surname').val();
+    const id = $('#id').val();
+    const loanAmount = $('#loan-amount').val();
+    const paymentPeriod = $('#payment-period').val();
+
+    // Ensure all required fields are filled
+    if (!name || !surname || !id || !loanAmount || !paymentPeriod) {
+      alert('Please fill out all fields before applying.');
+      return;
+    }
+
+    // Display thank-you message and refresh the page
+    alert('Thank you for applying! The page will now refresh.');
+    location.reload();
   });
 });
 });
